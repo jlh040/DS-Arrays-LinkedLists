@@ -54,7 +54,29 @@ class LinkedList {
   /** pop(): return & remove last item. */
 
   pop() {
+    let currentNode = this.head;
+    let removedVal;
 
+    if (!currentNode) {
+      return;
+    }
+    else if (!currentNode.next) {
+      removedVal = currentNode.val;
+      this.head = null;
+      this.tail = null;
+      this.length--;
+      return removedVal;
+    }
+    else {
+      while (currentNode.next.next) {
+        currentNode = currentNode.next;
+      }
+      removedVal = currentNode.next.val;
+      currentNode.next = null;
+      this.tail = currentNode;
+      this.length--;
+      return removedVal;
+    }
   }
 
   /** shift(): return & remove first item. */
