@@ -173,7 +173,7 @@ class LinkedList {
   removeAt(idx) {
     let removedVal;
     let currentNode = this.head;
-    if (this.length === 0 || idx >= this.length) return;
+    if (this.length === 0 || idx < 0 || idx >= this.length) throw Error('Index is invalid!');
 
     if (idx === 0) {
       removedVal = this.head.val;

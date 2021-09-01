@@ -177,6 +177,12 @@ describe("removeAt", function() {
     expect(lst.head.val).toBe(34);
     expect(lst.tail.val).toBe(56);
     expect(lst.length).toBe(2);
+  });
+
+  it('throws an error if the index is invalid', () => {
+    let lst = new LinkedList([17, 18, 19, 22]);
+    expect(() => lst.removeAt(-9)).toThrow();
+    expect(() => lst.removeAt(10)).toThrow();
   })
 });
 
