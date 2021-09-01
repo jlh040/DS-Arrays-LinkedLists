@@ -85,7 +85,7 @@ class LinkedList {
     let removedVal;
 
     if (this.length === 0) {
-      return;
+      throw Error('List is empty!');
     }
     else if (this.length === 1) {
       removedVal = this.head.val;

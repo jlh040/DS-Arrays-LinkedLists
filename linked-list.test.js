@@ -80,6 +80,11 @@ describe("shift", function() {
     expect(lst.head).toBe(null);
     expect(lst.length).toBe(0);
   });
+
+  it('throws an error if the list is empty', function() {
+    let lst = new LinkedList();
+    expect(() => lst.shift()).toThrow();
+  })
 });
 
 describe("getAt", function() {
