@@ -111,6 +111,12 @@ describe("setAt", function() {
     expect(lst.head.val).toBe(1);
     expect(lst.head.next.val).toBe(2);
   });
+
+  it('throws error if index is invalid', function() {
+    let lst = new LinkedList([9, 10, 11]);
+    expect(() => lst.setAt(-4, 67)).toThrow();
+    expect(() => lst.setAt(5, 98)).toThrow();
+  })
 });
 
 describe("insertAt", function() {

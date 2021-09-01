@@ -121,7 +121,7 @@ class LinkedList {
 
   setAt(idx, val) {
     if (idx < 0 || idx >= this.length) {
-      return;
+      throw Error('Index is invalid');
     }
     else {
       let currentNode = this.head;
