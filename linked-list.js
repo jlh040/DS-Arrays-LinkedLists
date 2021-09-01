@@ -146,7 +146,7 @@ class LinkedList {
         this.length++;
       }
       else {
-        return;
+        throw Error('Index is invalid');
       }
     }
     else if (idx === 0) {

@@ -144,6 +144,11 @@ describe("insertAt", function() {
     expect(lst.head.val).toBe(5);
     expect(lst.tail.val).toBe(5);
   });
+
+  it('throws error if index is invalid', function() {
+    let lst = new LinkedList([]);
+    expect(() => lst.setAt(5, 'Hello')).toThrow();
+  })
 });
 
 describe("removeAt", function() {
