@@ -60,6 +60,11 @@ describe("pop", function() {
     expect(lst.head).toBe(null);
     expect(lst.length).toBe(0);
   });
+
+  it('throws error if list is empty', function() {
+    let lst = new LinkedList();
+    expect(() => lst.pop()).toThrow()
+  })
 });
 
 describe("shift", function() {

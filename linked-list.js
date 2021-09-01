@@ -58,7 +58,7 @@ class LinkedList {
     let removedVal;
 
     if (!currentNode) {
-      return;
+      throw Error('List is empty!');
     }
     else if (!currentNode.next) {
       removedVal = currentNode.val;
