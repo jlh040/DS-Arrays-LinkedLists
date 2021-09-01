@@ -94,6 +94,12 @@ describe("getAt", function() {
     expect(lst.getAt(0)).toBe(5);
     expect(lst.getAt(1)).toBe(10);
   });
+
+  it('throws error if index is invalid', function() {
+    let lst = new LinkedList([5, 7, 8, 9, 10]);
+    expect(() => lst.getAt(-54)).toThrow();
+    expect(() => lst.getAt(5)).toThrow();
+  })
 });
 
 describe("setAt", function() {

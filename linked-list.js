@@ -106,7 +106,7 @@ class LinkedList {
 
   getAt(idx) {
     if (idx >= this.length || idx < 0) {
-      return;
+      throw Error('Index is invalid!')
     }
     else {
       let currentNode = this.head;
