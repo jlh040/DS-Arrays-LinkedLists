@@ -196,11 +196,12 @@ class LinkedList {
       for (let i = 0; i < idx - 1; i++) {
         currentNode = currentNode.next;
       }
+      removedVal = currentNode.next.val;
       let temp = currentNode.next.next;
       currentNode.next.next = null;
       currentNode.next = temp;
       this.length--;
-      return currentNode.next.val;
+      return removedVal;
     }
   }
 
