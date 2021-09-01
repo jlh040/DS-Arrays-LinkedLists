@@ -157,6 +157,9 @@ describe("average", function() {
   it("calculates the average of items in a list", function() {
     let lst = new LinkedList([2, 3, 1, 1, 7, 6, 9]);
     expect(lst.average()).toBeCloseTo(4.1429, 4);
+
+    let lst2 = new LinkedList([56]);
+    expect(lst2.average()).toBe(56);
   });
 
   it("returns 0 for empty lists", function() {
