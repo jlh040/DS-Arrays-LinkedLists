@@ -171,7 +171,37 @@ class LinkedList {
   /** removeAt(idx): return & remove item at idx, */
 
   removeAt(idx) {
+    let removedVal;
+    let currentNode = this.head;
+    if (this.length === 0 || idx >= this.length) return;
 
+    if (idx === 0) {
+      removedVal = this.head.val;
+      this.head = this.head.next ? this.head.next : null;
+      this.tail = this.head === null ? null : this.tail;
+      this.length--;
+      return removedVal;
+    }
+    else if (idx === this.length - 1) {
+      while (currentNode.next.next !== null) {
+        currentNode = currentNode.next;
+      }
+      removedVal = currentNode.next.val;
+      currentNode.next = null;
+      this.tail = currentNode;
+      this.length--;
+      return removedVal;
+    }
+    else {
+      for (let i = 0; i < idx - 1; i++) {
+        currentNode = currentNode.next;
+      }
+      let temp = currentNode.next.next;
+      currentNode.next.next = null;
+      currentNode.next = temp;
+      this.length--;
+      return currentNode.next.val;
+    }
   }
 
   /** average(): return an average of all values in the list */
