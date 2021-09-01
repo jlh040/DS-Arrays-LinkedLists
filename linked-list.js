@@ -136,7 +136,36 @@ class LinkedList {
   /** insertAt(idx, val): add node w/val before idx. */
 
   insertAt(idx, val) {
+    let newNode = new Node(val);
+    let currentNode = this.head;
 
+    if (this.length === 0) {
+      if (idx === 0) {
+        this.head = newNode;
+        this.tail = newNode;
+        this.length++;
+      }
+      else {
+        return;
+      }
+    }
+    else if (idx === 0) {
+      newNode.next = this.head;
+      this.head = newNode;
+      this.length++;
+    }
+    else if (idx === this.length) {
+      this.tail.next = newNode;
+      this.tail = newNode;
+    }
+    else {
+      for (let i = 0; i < idx - 1; i++) {
+        currentNode = currentNode.next;
+      }
+      newNode.next = currentNode.next;
+      currentNode.next = newNode;
+      this.length++;
+    }
   }
 
   /** removeAt(idx): return & remove item at idx, */
